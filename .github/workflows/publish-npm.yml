@@ -1,4 +1,4 @@
-name: Publish NPM Package
+name: Publish npm Package
 
 on:
   push:
@@ -8,19 +8,12 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
-
-      - name: Install dependencies and build
-        run:  npm ci
-
-      - name: Publish to NPM
-        run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-             npm publish
+          node-version: 14
+      - run: npm install
+      - run: npm run publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
