@@ -6,7 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmik-p/jwt-auth.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marmik-p/jwt-auth/issues"
+  },
+  "homepage": "https://github.com/marmik-p/jwt-auth#readme",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1"
+  }
 }
